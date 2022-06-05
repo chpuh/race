@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color:greenyellow;
+        }
+        .wrap{
+            width: 100%;
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+        }
+        .car {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            z-index:3;
+            display:flex;
+        }
+        .car4{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            z-index:3;
+            display:none;
+        }
+        .car3 {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            z-index:3;
+            display: none;
+        }
+        .car2 {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            z-index:3;
+            display: none;
+        }
+        .car1 {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            z-index:3;
+            display: none;
+        }
+        .car44 {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            z-index:3;
+            display:flex;
+        }
+        .car11 {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            z-index:3;
+            display:flex;
+        }
+        .car33 {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            z-index:3;
+            display:flex;
+        }
+        .car22 {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            z-index:3;
+            display:flex;
+        }
+        .car111 {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            z-index:3;
+            display:flex;
+        }
+        .frontLight {
+            width: 20px;
+            height: 20px;
+            background-color: yellow;
+            filter: blur(10px);
+            opacity: 0;
+            transition: 1s;
+        }
+        .frontLight1 {
+            width: 20px;
+            height: 20px;
+            background-color:red;
+            filter: blur(10px);
+            opacity: 0;
+            transition: 1s;
+        }
+        .carContainer {
+            height:200px;
+            width:200px;
+            left:-40px;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            transform: scale(1,1);
+            justify-content: center;
+            z-index:2;
+        }
+        .console{
+            margin-top:400px;
+            height: 110px;
+            width: 130px;
+
+            position:absolute;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+
+        }
+        .doroga{
+            background-color: #333;
+            width: 100%;
+            height: 200px;
+            z-index:1;
+        }
+        .street{
+            background-color:darkred;
+            height: 100px;
+            width: 300px;
+            display: flex;justify-content: center;
+            align-items: center;
+            margin-bottom: 40%;
+            position: absolute;
+            color:white;
+            font-weight: 900;
+            font-family:monospace;
+            font-size: 25px;
+            cursor: pointer;
+            border-radius:5px;
+        }
+       .street:hover{
+           background-color: white;
+           color:darkred;
+       }
+       .left{
+           width: 50px;
+           height: 50px;
+           cursor:pointer;
+       }
+       .right{
+           width: 50px;
+           height: 50px;
+           cursor: pointer;
+           margin-left: 5px;
+           margin-right:5px;
+       }
+       .changeOF{
+           width: 40px;
+           height: 40px;
+           cursor: pointer;
+       }
+       #light{
+           width: 40px;
+           height:40px;
+           cursor: pointer;
+       }
+       #changeSkin{
+           width:40px;
+           height: 40px;
+           cursor: pointer;
+       }
+       .wrap1{
+          display: none;
+          flex-direction: row; 
+          position:absolute;
+         margin-top: 425px;
+       }
+       .box{
+           width:200px;
+           height: 200px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           border-radius:25px;
+           border:gray solid 0.5px;
+           background: rgba(255,255,255,0.5);
+           margin-right: 20px;
+        cursor: pointer;
+       }
+
+       </style>
+</head>
+
+<body>
+
+
+  <div class="wrap" id="wrap">
+      <div class="street" id="street">
+          street races
+      </div>
+    <div class="carContainer" id="carContainer">
+        <div class="frontLight1" id="frontLight1"></div>
+        <img src="sport-car.png" alt="car" class="car" id="car">
+        <img src="sport-car (3).png" alt="car" class="car3" id="car3">
+        <img src="sport-car (2).png" alt="car" class="car2" id="car2">
+        <img src="sport-car (1).png" alt="car" class="car1" id="car1">
+        <div class="frontLight" id="frontLight"></div>
+    </div>
+    <div class="doroga" id="doroga"></div>
+    
+
+
+   <div class="console" id="console">
+    <div class="left-right">
+    <img src="previous.png" alt="left" id="moveLeft" class="left">
+    <img src="318476.png" alt="right" id="moveRight" class="right">
+    <img src="exchange.png" alt="changeOF" class="changeOF" id="changeOF">
+    <img src="car-light.png" alt="light" id="light">
+    <img src="exchange (1).png" alt="skin change" id="changeSkin">
+</div>
+   </div>
+   <div class="wrap1" id="wrap1">
+    <div class="box" id="box1">
+        <img src="sport-car (3).png" alt="car" class="car33" id="car33">
+    </div>
+    <div class="box" id="box2">
+        <img src="sport-car (2).png" alt="car" class="car22" id="car22">
+    </div>
+    <div class="box" id="box3">
+        <img src="sport-car (1).png" alt="car" class="car111" id="car111">
+    </div>
+   <div class="box" id="box4"> 
+    <img src="sport-car.png" alt="car" class="car44" id="car44">
+  </div>
+ </div>
+</div>
+ 
+
+    <script>
+
+
+      changeSkin.onclick = function(){
+       wrap1.style.display = 'flex'
+      }
+      box1.onclick = function(){
+          car.style.display ='none'
+          car1.style.display ='none'
+          car2.style.display ='none'
+          car3.style.display ='flex'
+          wrap1.style.display = 'none'
+      }
+      box2.onclick = function(){
+          car.style.display ='none'
+          car1.style.display ='none'
+          car2.style.display ='flex'
+          car3.style.display ='none'
+          wrap1.style.display = 'none'
+      }
+      box3.onclick = function(){
+          car.style.display ='none'
+          car1.style.display ='flex'
+          car2.style.display ='none'
+          car3.style.display ='none'
+          wrap1.style.display = 'none'
+      }
+      box4.onclick = function(){
+          car.style.display ='flex'
+          car1.style.display ='none'
+          car2.style.display ='none'
+          car3.style.display ='none'
+          wrap1.style.display = 'none'
+      }
+
+
+        let leftPos = 0;
+        moveRight.onclick = function() {
+            leftPos++;
+            carContainer.style.left = leftPos + '%';
+        }
+        moveLeft.onclick = function() {
+            leftPos--;
+            carContainer.style.left = leftPos + '%';
+        }
+     let change = false;
+    changeOF.onclick = function(){
+       if(change === false){
+        carContainer.style.transform ='scale(-1,1)';
+       }else {
+        carContainer.style.transform ='scale(1,1)';
+       }
+    }
+
+        let lightState = false;
+        light.onclick = function() {
+            if (lightState === false) {
+                frontLight.style.opacity = 1;
+                frontLight1.style.opacity = 1;  
+                lightState = true;
+            } else {
+                frontLight.style.opacity = 0;
+                frontLight1.style.opacity = 0;
+                lightState = false;
+            }
+        }
+        
+    </script>
+</body></html>
